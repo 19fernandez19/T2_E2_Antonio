@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">T2_E2_Antonio</string>
+    <string-array name="spinner">
+        <item>Dulce</item>
+        <item>Salado</item>
+        <item>Amargo</item>
+    </string-array>
+</resources>
