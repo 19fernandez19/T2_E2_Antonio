@@ -85,7 +85,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.328"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:ignore="TouchTargetSizeCheck"
+        android:onClick="insertar"/>
 
     <TextView
         android:id="@+id/textoSearcFruit"
@@ -103,6 +104,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="GET ALL"
+        android:onClick="mostrar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.063"
@@ -136,13 +138,26 @@
 
     <TextView
         android:id="@+id/listaRegistros"
-        android:layout_width="408dp"
-        android:layout_height="280dp"
+        android:layout_width="409dp"
+        android:layout_height="197dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName"
+        android:layout_width="365dp"
+        android:layout_height="45dp"
+        android:ems="10"
+        android:hint="Nombre"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.673" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,6 +3,7 @@ package com.example.t2_e2_antonio;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentValues;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
@@ -51,9 +52,41 @@ public class MainActivity extends AppCompatActivity {
             values.put("nombre", textoNombre.getText().toString());
             values.put("peso", textoPeso.getText().toString());
             values.put("sabor", sabor.getSelectedItem().toString());
+            values.put("rotten", rotten.isSelected());
+            db.insert("Fruitis", null, values);
+
+
 
         }
     }
 
 
+
+    public void buscar(Cursor cursor){
+        //Ir al primer registro
+        cursor.moveToFirst();
+        int fila=cursor.getCount();
+        int columna=cursor.getColumnCount();
+        String filas="\n";
+
+        for(int i=0; i<fila; i++){
+            filas="\n";
+            for(int j=0; j<columna; j++){
+                filas=filas+cursor.getString(j) + " ";
+            }
+            lista.append(filas);
+            cursor.moveToNext();
+        }
+    }
+
+
+    public void mostrar(View view) {
+        db = helper.getReadableDatabase();
+        Cursor cursor = db.query("Fruitis", null, null, null, null, null, null);
+        buscar(cursor);
+
+        textoNombre.setText("");
+        textoPeso.setText("");
+        rotten.setSelected(false);
+    }
 }
