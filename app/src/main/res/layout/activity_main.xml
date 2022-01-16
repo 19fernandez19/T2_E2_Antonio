@@ -14,79 +14,84 @@
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.473"
+        app:layout_constraintHorizontal_bias="0.033"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.054" />
+        app:layout_constraintVertical_bias="0.043" />
 
     <EditText
         android:id="@+id/textoNombre"
-        android:layout_width="375dp"
-        android:layout_height="46dp"
+        android:layout_width="378dp"
+        android:layout_height="40dp"
         android:ems="10"
+        android:freezesText="true"
         android:hint="Nombre"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.017"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.141"
+        app:layout_constraintVertical_bias="0.124"
         tools:ignore="TouchTargetSizeCheck" />
 
     <EditText
         android:id="@+id/textoWeight"
-        android:layout_width="134dp"
-        android:layout_height="39dp"
+        android:layout_width="152dp"
+        android:layout_height="43dp"
         android:ems="10"
+        android:freezesText="true"
         android:hint="Weight"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.057"
+        app:layout_constraintHorizontal_bias="0.015"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.235"
+        app:layout_constraintVertical_bias="0.21"
         tools:ignore="TouchTargetSizeCheck" />
 
     <CheckBox
         android:id="@+id/checkboxRotten"
-        android:layout_width="82dp"
-        android:layout_height="40dp"
+        android:layout_width="86dp"
+        android:layout_height="41dp"
+        android:freezesText="true"
         android:text="Rotten"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.945"
+        app:layout_constraintHorizontal_bias="0.898"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.235"
+        app:layout_constraintVertical_bias="0.207"
         tools:ignore="TouchTargetSizeCheck" />
 
     <Spinner
         android:id="@+id/spinner"
+        android:layout_width="112dp"
+        android:layout_height="42dp"
         android:entries="@array/spinner"
-        android:layout_width="140dp"
-        android:layout_height="38dp"
+        android:freezesText="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.586"
+        app:layout_constraintHorizontal_bias="0.565"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.238"
+        app:layout_constraintVertical_bias="0.208"
         tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     <Button
         android:id="@+id/botonAdd"
         android:layout_width="377dp"
         android:layout_height="42dp"
+        android:onClick="insertar"
         android:text="Add"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.529"
+        app:layout_constraintHorizontal_bias="0.117"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.328"
-        tools:ignore="TouchTargetSizeCheck"
-        android:onClick="insertar"/>
+        app:layout_constraintVertical_bias="0.303"
+        tools:ignore="TouchTargetSizeCheck" />
 
     <TextView
         android:id="@+id/textoSearcFruit"
@@ -96,68 +101,75 @@
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.23"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.381" />
 
     <Button
         android:id="@+id/botonGetAll"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="GET ALL"
         android:onClick="mostrar"
+        android:text="GET ALL"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.063"
+        app:layout_constraintHorizontal_bias="0.028"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.59" />
+        app:layout_constraintVertical_bias="0.469" />
 
     <Button
         android:id="@+id/botonGetLast"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="ultimoRegistro"
         android:text="GET LAST"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.445"
+        app:layout_constraintHorizontal_bias="0.396"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.59" />
+        app:layout_constraintVertical_bias="0.468" />
 
     <Button
         android:id="@+id/botonGetByName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="registroPorNombre"
         android:text="GET BY NAME"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.943"
+        app:layout_constraintHorizontal_bias="0.89"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.59" />
+        app:layout_constraintVertical_bias="0.468" />
 
     <TextView
         android:id="@+id/listaRegistros"
-        android:layout_width="409dp"
-        android:layout_height="197dp"
+        android:layout_width="412dp"
+        android:layout_height="262dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/filtroNombre"
         android:layout_width="365dp"
         android:layout_height="45dp"
         android:ems="10"
+        android:freezesText="true"
         android:hint="Nombre"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.195"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.673" />
+        app:layout_constraintVertical_bias="0.552"
+        tools:ignore="TouchTargetSizeCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

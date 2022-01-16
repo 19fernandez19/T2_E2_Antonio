@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
 
     SQLiteDatabase db;
     SQLiteHelper helper;
-    EditText textoNombre, textoPeso;
+    EditText textoNombre, textoPeso, buscarNombre;
     Spinner sabor;
     CheckBox rotten;
     TextView lista;
@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         sabor = findViewById(R.id.spinner);
         rotten = findViewById(R.id.checkboxRotten);
         lista = findViewById(R.id.listaRegistros);
+        buscarNombre = findViewById(R.id.filtroNombre);
 
         //crear objeto de la clase SQLiteHelper
         helper = new SQLiteHelper(this);
@@ -60,8 +61,6 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-
-
     public void buscar(Cursor cursor){
         //Ir al primer registro
         cursor.moveToFirst();
@@ -81,6 +80,8 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void mostrar(View view) {
+
+        lista.setText("");
         db = helper.getReadableDatabase();
         Cursor cursor = db.query("Fruitis", null, null, null, null, null, null);
         buscar(cursor);
@@ -88,5 +89,28 @@ public class MainActivity extends AppCompatActivity {
         textoNombre.setText("");
         textoPeso.setText("");
         rotten.setSelected(false);
+
+    }
+
+    public void ultimoRegistro(View view){
+
+        lista.setText("");
+
+        db = helper.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM fruitis WHERE ID = (SELECT MAX(ID) FROM Fruitis);", null);
+        buscar(cursor);
+
+    }
+
+    public void registroPorNombre(View view){
+        lista.setText("");
+        String nombre = buscarNombre.getText().toString();
+        buscarNombre.setVisibility(View.VISIBLE);
+        db = helper.getReadableDatabase();
+
+        Cursor cursor = db.rawQuery("SELECT * FROM fruitis WHERE NOMBRE = '" + nombre +"';", null);
+        buscar(cursor);
+
     }
 }
+
